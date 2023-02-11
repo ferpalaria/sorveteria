@@ -7,8 +7,9 @@
 :root {
   font-size: 62.5%;
 
-  --ff-heading: "Staatliches", cursive;
-  --ff-body: "Palanquin", sans-serif;
+  --ff-staatliches: "Staatliches", cursive;
+  --ff-palaquin: "Palanquin", sans-serif;
+  --ff-roboto: "Roboto", sans-serif;
 
   --hue: 226;
   --bg-body: hsl(var(--hue), 100%, 97%);
@@ -16,6 +17,23 @@
   --bg-label: hsl(var(--hue), 100%, 90%);
 
   --fc-body: hsl(var(--hue), 84%, 12%);
+
+  /* --fs-body: clamp(1.4rem, 0rem + 3vw, 2.4rem); */
+  /* --flh-body: clamp(1.5rem, 0rem + 3vw, 2rem); */
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--fc-body);
+
+    
+  font-family: var(--ff-palaquin);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+
+  text-align: center;
+
 }
 
 header {
@@ -34,7 +52,7 @@ header img {
   width: auto;
 }
 
-header .faixa {
+.faixa {
   bottom: 3rem;
   width: 100%;
 
@@ -47,8 +65,8 @@ header .faixa {
   justify-content: center;
 }
 
-header .faixa h1 {
-  font-family: var(--ff-heading);
+h1 {
+  font-family: var(--ff-staatliches);
   color: white;
 
   font-size: 4rem;
@@ -60,30 +78,29 @@ header .faixa h1 {
 }
 
 main {
-  padding: 0 3.2rem 6rem;
-  background: var(--bg-body);
-
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3.2rem;
 }
 
-main .texto {
-  margin: 2.2rem auto;
+.texto {
+  padding: 2.2rem 2rem 5.6rem;
 
   display: flex;
   align-items: center;
+
+  width: 100vw;
+  height: auto;
 }
 
-main p {
-  font-family: var(--ff-body);
-  color: var(--fc-body);
-  font-size: 1.4rem;
+.texto p {
 
-  line-height: 15px;
+}
 
-  text-align: center;
+.texto span {
+  display:none;
 }
 
 .card {
@@ -109,10 +126,61 @@ main p {
   text-transform: uppercase;
 
   color: hsla(232, 17%, 35%, 1);
-  font-family: var(--ff-heading);
+  font-family: var(--ff-staatliches);
   font-size: 2rem;
-  
+
   line-height: 3.4rem;
   text-align: center;
   letter-spacing: 0.05em;
+}
+
+@media (min-width: 450px) {
+  body {
+    display: flex;
+
+  }
+  
+  #painel {
+    background-color: var(--bg-header);
+    color: white;
+  }
+
+  .texto {
+    width: 37rem;
+    padding: 0 6rem;
+  }
+
+  .texto span {
+    display:inline;
+  }
+  
+  main {
+    padding: 6.4rem 9rem;
+
+    display: grid;
+    grid-template-areas:
+    "A B A"
+    "D B D"
+    "D C D";
+  }
+
+  main div:nth-child(1){
+    grid-area: A;
+  }
+
+  main div:nth-child(2) {
+    grid-area: B;
+  }
+
+  main div:nth-child(3) {
+    grid-area: C;
+  }
+
+  main div:nth-child(4) {
+    grid-area: D;
+  }
+
+  .label {
+    display: none;
+  }
 }
