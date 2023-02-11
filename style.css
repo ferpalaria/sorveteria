@@ -159,9 +159,9 @@ main {
 
     display: grid;
     grid-template-areas:
-    "A B A"
-    "D B D"
-    "D C D";
+    "A B"
+    "D B"
+    "D C";
   }
 
   main div:nth-child(1){
