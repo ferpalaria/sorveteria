@@ -12,4 +12,5 @@
 - css animações [@keyfames]
 - mobile first
 
+
 <img src="./assets/layout_desktop.png">
